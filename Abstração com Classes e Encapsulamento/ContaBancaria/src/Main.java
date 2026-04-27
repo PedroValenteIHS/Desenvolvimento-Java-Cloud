@@ -1,3 +1,5 @@
+// Esceva um código com uma classe conta que permita depositar, sacar e visualizar o saldo.
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +8,7 @@ public class Main {
         var scanner = new Scanner(System.in);
         int acao = 0;
         var conta = new Conta();
+        //Informa as opções
         while (acao <= 6){
             System.out.println("1 - Consultar saldo");
             System.out.println("2 - Depositar Dinheiro");
@@ -14,7 +17,7 @@ public class Main {
 
             acao = scanner.nextInt();
             var saldo = conta.getSaldo();
-
+        //Verifica a ação desejada e a realiza
             if (acao == 1){
                 System.out.printf("Saldo: %s \n", saldo);
             }else if (acao == 2){
@@ -37,3 +40,6 @@ public class Main {
         }
     }
 }
+
+
+// Ad Majorem Dei Gloriam
