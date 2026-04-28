@@ -12,6 +12,8 @@ public class Main {
             System.out.println("1 - Ligar carro");
             System.out.println("2 - Desligar carro");
             System.out.println("3 - Acelerar");
+            System.out.println("4 - Desacelerar");
+            System.out.println("5 - Trocar marcha");
             System.out.println("6 - Verificar velocimetro");
             System.out.println("Sair");
 
@@ -31,11 +33,16 @@ public class Main {
                 System.out.println("Quantos km/h vai desacelerar?");
                 acelerar = scanner.nextInt();
                 System.out.printf("%s \n", carro.desacelerar(acelerar));
-            }
-            if (acao == 6) {
+            } else if (acao == 5) {
+                System.out.println("Digite a marcha:");
+                System.out.println("N - 1 - 2 - 3 - 4 - 5 - R");
+                var marcha = scanner.next();
+                System.out.printf("%s\n", carro.trocarMarcha(marcha));
+            }else if (acao == 6) {
                 int velocidade = carro.velocimetro();
                 System.out.printf("%sKM/h \n", velocidade);
             }
+
         } while (acao <= 10);
 
     }
