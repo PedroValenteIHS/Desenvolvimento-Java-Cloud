@@ -2,12 +2,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Carro {
+    //Declara as propriedades
     private boolean status;
     private int velocidade;
     private String marcha = "N";
     List<String> marchas = Arrays.asList("N", "1", "2", "3", "4", "5", "R");
     String mensagem;
 
+    //Construtor
     public Carro(){
         status = false;
     }
@@ -21,6 +23,7 @@ public class Carro {
     }
 
     public String acelerar(int acelerar){
+        // Acelera o carro de acordo com verificação se está com a marcha adequada
         if (!status) {
             mensagem = "O carro está desligado";
         } else if (marcha.equals("N")) {
@@ -57,6 +60,7 @@ public class Carro {
     }
 
     public String desacelerar(int desacelerar){
+        //Desacelera o carro verificando se está com a marcha adequada
         if (!status) {
             mensagem = "O carro está desligado";
         } else if (marcha.equals("N")) {
@@ -94,16 +98,81 @@ public class Carro {
     }
 
     public String trocarMarcha(String marcha){
+        //Troca de marcha verificando se a marcha escolhida pra ser trocada é muito superior.
+        mensagem = "Marcha trocada para a " + marcha;
         if (!marchas.contains(marcha)){
             mensagem = "Marcha inválida";
         } else {
-            this.marcha = marcha;
+            if(this.marcha.contains("N") || this.marcha.contains("R")){
+                if (marcha.contains("R")){
+                    this.marcha = marcha;
+                } else if (marcha.contains("1")){
+                    this.marcha = marcha;
+                }else {
+                    mensagem = "Marcha muito elevada";
+                }
+            }else if (this.marcha.contains("1")){
+                if (marcha.contains("R")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("N")){
+                    this.marcha = marcha;
+                } else if (marcha.contains("2")){
+                    this.marcha = marcha;
+                } else {
+                    mensagem = "Marcha muito elevada";
+                }
+            } else if (this.marcha.contains("2")){
+                if (marcha.contains("R")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("N")){
+                    this.marcha = marcha;
+                } else if (marcha.contains("1")){
+                    this.marcha = marcha;
+                }
+                else if (marcha.contains("3")){
+                    this.marcha = marcha;
+                }else {
+                    mensagem = "Marcha muito elevada";
+                }
+            } else if (this.marcha.contains("3")){
+                if (marcha.contains("R")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("N")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("1")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("2")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("4")){
+                    this.marcha = marcha;
+                }else {
+                    mensagem = "Marcha muito elevada";
+                }
+            } else if (this.marcha.contains("4")){
+                if (marcha.contains("R")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("N")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("1")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("2")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("3")){
+                    this.marcha = marcha;
+                }else if (marcha.contains("5")) {
+                    this.marcha = marcha;
+                }else {
+                    mensagem = "Marcha muito elevada";
+                }
+            }else {
+                this.marcha = marcha;
+            }
+
             if (marcha.contains("R")) {
                 velocidade = 0;
             }
-
-            mensagem = "Marcha trocada para a " + marcha;
         }
         return mensagem;
     }
 }
+

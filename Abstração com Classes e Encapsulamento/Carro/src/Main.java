@@ -1,3 +1,5 @@
+//Crie um código que simule um carro;
+
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +20,7 @@ public class Main {
             System.out.println("Sair");
 
             acao = scanner.nextInt();
-
+        //Chama a funcao de cada ação tomada
             if (acao == 1){
                 carro.ligar();
                 System.out.println("Carro ligado");
@@ -43,7 +45,9 @@ public class Main {
                 System.out.printf("%sKM/h \n", velocidade);
             }
 
-        } while (acao <= 10);
+        } while (acao == 1 || acao == 2 || acao == 3 || acao == 4 || acao == 5 || acao == 6);
 
     }
 }
+
+//Ad Majorem Dei Gloria
