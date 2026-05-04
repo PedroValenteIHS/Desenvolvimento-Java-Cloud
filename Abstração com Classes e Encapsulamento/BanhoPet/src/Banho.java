@@ -4,6 +4,7 @@ public class Banho {
     private boolean ocupado;
     String mensagem;
 
+    //construtor
     public Banho (){
         agua = 30;
         shampoo = 10;

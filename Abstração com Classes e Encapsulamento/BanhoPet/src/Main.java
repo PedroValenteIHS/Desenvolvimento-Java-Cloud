@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//Criar um código que simula um "banho de pet"
 
 import java.util.Scanner;
 
@@ -22,6 +22,7 @@ public class Main {
 
             acao = scanner.nextInt();
 
+            //Aciona a opção selecionada
             if (acao == 1){
                 mensagem = banho.darBanho();
                 System.out.printf("%s\n", mensagem);
@@ -48,6 +49,9 @@ public class Main {
                 mensagem = banho.retirar();
                 System.out.printf("%s\n", mensagem);
             }
+            //Verifica se vai sair do sistema
         } while (acao == 1 || acao == 2 || acao == 3 || acao == 4 || acao == 5 || acao == 6 || acao == 7);
     }
 }
+
+// Ad Majorem Dei Gloria
